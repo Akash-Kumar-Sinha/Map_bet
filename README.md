@@ -1,55 +1,32 @@
-# React + TypeScript + Vite
+# Map Bet
+
+This project is a Solana-based betting game application that allows participants to wager their SOL tokens. The game operates under a set of straightforward rules:
+
+1. Betting Window: The game runs in 24-hour cycles, during which at least one bet must be placed. If no bets are made within this window, the accumulated tokens will be distributed among all participants.
+
+2. Profit Distribution: There is no single winner in the game. Participants profit based on their position in the betting sequence. The participant who placed the last bet within the window will receive a substantial share of the profit, while early participants will also gain significant returns.
+
+3. Bet Increment: Each new bet must be greater than the previous bet amount, ensuring an increasing stake throughout the game.
+
+This structure creates a dynamic and competitive environment, rewarding both strategic early entries and timely last-minute bets.
+
+## Backend and frontend installtion guide
+
+- `npm install`
+- Then change the directory to `cd backend_bet_map/` then again run `npm install`
 
 ## Backend command for database
 
 - npx prisma generate
 - npx prisma db push
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Frontend Folder Structure
 
-Currently, two official plugins are available:
+## Backend Folder Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Transaction file is responsible for handling the core logic of processing player transactions within the betting game.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Game Management
+- Player Management
+- Reward Distribution
+- Owner Updates
